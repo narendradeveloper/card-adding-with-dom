@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card Addition</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #5c91c5;
+    border: 1px solid #353c44;
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+button{
+    background-color: aqua;
+    width: 200px;
+    height: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>click below  adding the card</h1>
+    <div id="card-container" class="card-container"></div>
+    <button id="add-card-btn">Add Card</button>
+
+    <script>
+        document.getElementById('add-card-btn').addEventListener('click', () => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+
+    card.innerHTML = `
+        <h3>Name:narendra</h3>
+        <p> Phone:123-8973-098</p>
+        <p> course:fullstack</p>
+    `;
+
+    document.getElementById('card-container').appendChild(card);
+});
+
+    </script>
+</body>
+</html>
